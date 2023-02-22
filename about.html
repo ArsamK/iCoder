@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iCoder</title>
+
+    <!-- Bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <style>
+            @media screen and (max-width:780px) {
+        .my-btn{
+          display: block;
+          margin: 2px auto;
+        }
+      }
+    </style>
+
+    <!-- source.unsplash url: https://source.unsplash.com/500x400/?python,texhnology -->
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">iCoder</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Courses
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">App Development</a></li>
+                <li><a class="dropdown-item" href="#">Web Development</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Want to know more</a></li>
+                <li><a class="dropdown-item" href="#">Others</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+
+          <div class="mx-2">
+            <div class="btn btn-success my-btn" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Log in</div>
+            <div class="btn btn-success my-btn" data-bs-toggle="modal"
+            data-bs-target="#signupModal">Sign Up</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+        <!--Login Modal -->
+        <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="loginModalLabel">
+                Log in to iCoder
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- log in form start -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Check me out</label
+                  >
+                </div>
+                <button type="submit" class="btn btn-primary">Log in</button>
+              </form>
+              <!-- log in form end -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!--Signup Modal -->
+      <div
+        class="modal fade"
+        id="signupModal"
+        tabindex="-1"
+        aria-labelledby="signupModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="signupModalLabel">
+                Create an iCoder Account
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Sign Up form start -->
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="cexampleInputPassword1" class="form-label"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="cexampleInputPassword1"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+              </form>
+              <!-- Sign Up form end -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+    <div class="container my-4">
+      <div
+        class="row featurette d-flex justify-content-center align-items-center"
+      >
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >Featured first title.
+              </font></font
+            ><span class="text-muted"
+              ><font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit"
+                  >It will blow your mind.</font
+                ></font
+              ></span
+            >
+          </h2>
+          <p class="lead">
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >The human face is a complex and highly distinct part of the
+                body. </font
+              ><font style="vertical-align: inherit"
+                >In fact, it is one of the most complex signaling systems
+                available to us; </font
+              ><font style="vertical-align: inherit"
+                >It includes more than 40 structurally and functionally
+                independent muscles, each of which can be operated independently
+                of the other; </font
+              ><font style="vertical-align: inherit"
+                >It is one of the strongest indicators of emotion.</font
+              ></font
+            >
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+            src="images/front macbook.jfif"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div
+        class="row featurette d-flex justify-content-center align-items-center"
+      >
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1">
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >Featured first title.
+              </font></font
+            ><span class="text-muted"
+              ><font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit"
+                  >It will blow your mind.</font
+                ></font
+              ></span
+            >
+          </h2>
+          <p class="lead">
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >The human face is a complex and highly distinct part of the
+                body. </font
+              ><font style="vertical-align: inherit"
+                >In fact, it is one of the most complex signaling systems
+                available to us; </font
+              ><font style="vertical-align: inherit"
+                >It includes more than 40 structurally and functionally
+                independent muscles, each of which can be operated independently
+                of the other; </font
+              ><font style="vertical-align: inherit"
+                >It is one of the strongest indicators of emotion.</font
+              ></font
+            >
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+            src="images/mac.jfif"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div
+        class="row featurette d-flex justify-content-center align-items-center order-md-1"
+      >
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >Featured first title.
+              </font></font
+            ><span class="text-muted"
+              ><font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit"
+                  >It will blow your mind.</font
+                ></font
+              ></span
+            >
+          </h2>
+          <p class="lead">
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >The human face is a complex and highly distinct part of the
+                body. </font
+              ><font style="vertical-align: inherit"
+                >In fact, it is one of the most complex signaling systems
+                available to us; </font
+              ><font style="vertical-align: inherit"
+                >It includes more than 40 structurally and functionally
+                independent muscles, each of which can be operated independently
+                of the other; </font
+              ><font style="vertical-align: inherit"
+                >It is one of the strongest indicators of emotion.</font
+              ></font
+            >
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+            src="images/macbook.jfif"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      >
+        <div class="col-md-4 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+          >
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© 2023 iCoder, Inc</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-muted" href="#"
+              ><svg class="bi" width="24" height="24">
+                <use xlink:href="#twitter"></use></svg
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"
+              ><svg class="bi" width="24" height="24">
+                <use xlink:href="#instagram"></use></svg
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"
+              ><svg class="bi" width="24" height="24">
+                <use xlink:href="#facebook"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <!--Bootstrap Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
